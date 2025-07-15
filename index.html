@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
+    rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Recipe page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .main {
+      background-color: hsl(30, 54%, 90%);
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      padding: 25px;
+      width: 30%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      justify-content: center;
+    }
+
+    .img1 {
+      border-radius: 5px;
+      display: flex;
+      width: 100%;
+      height: 100%
+    }
+
+    p {
+      font-size: 12px;
+      color: hsl(30, 10%, 34%);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      margin: 0px;
+    }
+
+    .head1 {
+      font-size: 33px;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 400px;
+      color: hsl(24, 5%, 18%);
+      margin-bottom: 0;
+      margin-top: 4;
+    }
+
+    .preparation {
+      border-radius: 10px;
+      margin: 0px;
+      flex-direction: column;
+      display: flex;
+      background-color: hsl(330, 100%, 98%);
+      padding: 10px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .preparation h4 {
+      font-size: 14px;
+      color: hsl(332, 51%, 32%);
+    }
+
+    .preparation ul li {
+      padding-left: 10px;
+      padding-bottom: 6px;
+      font-size: 12px;
+      font-weight: 550;
+    }
+
+    .preparation ul {
+      line-height: 25px;
+      list-style-position: inside;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+      margin: 10px 0px 0px 0px;
+      color: hsl(14, 45%, 36%);
+
+
+    }
+
+    .ingredients ul li {
+      padding-left: 10px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .ingredients ul {
+      line-height: 30px;
+      list-style-position: inside;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    .instructions ol {
+      list-style: none;
+      /* Disable default browser numbering */
+      padding-left: 0em;
+      margin-left: 0;
+      counter-reset: step;
+      /* Start a custom counter */
+    }
+
+
+    .instructions ol li {
+      padding-left: 2em;
+      position: relative;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+
+
+    .instructions ol li::before {
+      content: counter(step) ".    ";
+      counter-increment: step;
+      font-weight: bold;
+      color: hsl(14, 45%, 36%);
+      position: absolute;
+      left: 0;
+      width: 1.5em;
+      display: inline-block;
+    }
+
+
+
+
+    body {
+      color: hsl(30, 10%, 34%);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .line {
+      margin: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 0.5px;
+      border: 1px;
+      background-color: hsl(32, 13%, 77%);
+    }
+
+    .tab {
+      align-items: flex-start;
+      display: flex;
+      justify-content: left;
+      color: #333;
+    }
+
+    table {
+      align-items: flex-start;
+      width: 100%;
+      border-collapse: collapse;
+      font-weight: 500;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+
+    td {
+      font-size: 13px;
+      padding: 12px 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    td:first-child {
+      color: #555;
+    }
+
+    td:last-child {
+      padding-right: 170px;
+      font-weight: bold;
+      color: #7b3e1d;
+      /* Matches the brown color */
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="container">
+      <div>
+        <img class="img1" src="./assets/images/image-omelette.jpeg">
+      </div>
+      <h2 class="head1">Simple Omelette Recipe</h2>
+      <p>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked
+        to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
+      <div class="preparation">
+        <h4 style="margin: 0;">Preparation time</h4>
+        <ul>
+          <li><b>Total:</b> Approximately 10 minutes</li>
+          <li><b>Preparation:</b> 5 minutes</li>
+          <li><b>Cooking:</b> 5 minutes</li>
+        </ul>
+      </div>
+      <div class="ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          <li> 2-3 large eggs</li>
+          <li> Salt, to taste</li>
+          <li> Pepper, to taste</li>
+          <li> 1 tablespoon of butter or oil</li>
+          <li> Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
+        </ul>
+      </div>
+      <div class="line"></div>
+      <div class="instructions">
+        <h3>Instructions</h3>
+        <ol>
+          <li><b>Beat the eggs:</b> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed.
+            You can add a tablespoon of water or milk for a fluffier texture.</li>
+          <li><b>Heat the pan:</b> Place a non-stick frying pan over medium heat and add butter or oil.</li>
+          <li><b> Cook the omelette:</b> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to
+            ensure
+            the eggs evenly coat the surface.</li>
+          <li><b>Add fillings (optional):</b> When the eggs begin to set at the edges but are still slightly runny in
+            the
+            middle, sprinkle your chosen fillings over one half of the omelette.</li>
+          <li> <b>Fold and serve:</b> As the omelette continues to cook, carefully lift one edge and fold it over the
+            fillings. Let it cook for another minute, then slide it onto a plate.</li>
+          <li> <b>Enjoy: </b>Serve hot, with additional salt and pepper if needed.
+          </li>
+        </ol>
+      </div>
+      <div class="line"></div>
+      <h3>Nutrition</h3>
+
+      <p>The table below shows nutritional values per serving without the additional fillings.</p>
+      <div class="tab">
+        <table>
+          <tr>
+            <td> Calories</td>
+            <td> 277kcal</td>
+          </tr>
+
+          <tr>
+            <td>Carbs</td>
+            <td>0g</td>
+          </tr>
+
+          <tr>
+            <td> Protein</td>
+            <td> 20g</td>
+          </tr>
+          <tr>
+            <td> Fat</td>
+            <td> 22g</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
